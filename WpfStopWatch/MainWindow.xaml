@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfStopWatch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfStopWatch"
+        mc:Ignorable="d"
+        Title="Stopwatch" Height="350" Width="650">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Button Name="Timer_Start_Button" Click="Timer_Start_Button_Click" Grid.Row="1" Grid.Column="0" FontSize="22" FontWeight="Bold">Start</Button>
+        <Button Name="Timer_Stop_Button" Click="Timer_Stop_Button_Click" Grid.Row="1" Grid.Column="1" FontSize="22" FontWeight="Bold">Stop</Button>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Path=StopWatch, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                   TextAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+        <Button Name="Timer_Reset_Button" Click="Timer_Reset_Button_Click" Grid.Row="1" Grid.Column="3" FontSize="22" FontWeight="Bold">Reset</Button>
+        <TextBlock Grid.Row="4" Grid.Column="5" Text="{Binding Path=CurrentTime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                   TextAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+
+    </Grid>
+</Window>
